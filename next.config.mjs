@@ -21,6 +21,14 @@ const nextConfig = {
     parallelServerBuildTraces: true,
     parallelServerCompiles: true,
   },
+  async rewrites() {
+    return [
+      {
+        source: '/sitemap.xml',
+        destination: '/sitemap', // This points to the route handler at `app/sitemap/route.ts`
+      },
+    ]
+  },
 }
 
 mergeConfig(nextConfig, userConfig)
